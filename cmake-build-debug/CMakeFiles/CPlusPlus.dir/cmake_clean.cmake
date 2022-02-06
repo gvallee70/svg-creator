@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/CPlusPlus.dir/SvgTemplate.cpp.o"
   "CMakeFiles/CPlusPlus.dir/main.cpp.o"
   "CPlusPlus"
   "CPlusPlus.pdb"

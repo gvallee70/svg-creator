@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/GwendalPadam/Documents/Dev/ESGI/4MOC/Projets/CPlusPlus/SvgTemplate.cpp">
+			<Option target="CPlusPlus"/>
+		</Unit>
+		<Unit filename="/Users/GwendalPadam/Documents/Dev/ESGI/4MOC/Projets/CPlusPlus/SvgTemplate.h">
+			<Option target="CPlusPlus"/>
+		</Unit>
 		<Unit filename="/Users/GwendalPadam/Documents/Dev/ESGI/4MOC/Projets/CPlusPlus/main.cpp">
 			<Option target="CPlusPlus"/>
 		</Unit>

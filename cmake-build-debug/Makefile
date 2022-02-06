@@ -143,6 +143,33 @@ CPlusPlus/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/build
 .PHONY : CPlusPlus/fast
 
+SvgTemplate.o: SvgTemplate.cpp.o
+
+.PHONY : SvgTemplate.o
+
+# target to build an object file
+SvgTemplate.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/SvgTemplate.cpp.o
+.PHONY : SvgTemplate.cpp.o
+
+SvgTemplate.i: SvgTemplate.cpp.i
+
+.PHONY : SvgTemplate.i
+
+# target to preprocess a source file
+SvgTemplate.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/SvgTemplate.cpp.i
+.PHONY : SvgTemplate.cpp.i
+
+SvgTemplate.s: SvgTemplate.cpp.s
+
+.PHONY : SvgTemplate.s
+
+# target to generate assembly for a file
+SvgTemplate.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/SvgTemplate.cpp.s
+.PHONY : SvgTemplate.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -179,6 +206,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... CPlusPlus"
+	@echo "... SvgTemplate.o"
+	@echo "... SvgTemplate.i"
+	@echo "... SvgTemplate.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

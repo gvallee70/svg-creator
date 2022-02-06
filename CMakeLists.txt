@@ -3,4 +3,4 @@ project(CPlusPlus)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(CPlusPlus main.cpp)
+add_executable(CPlusPlus main.cpp SvgTemplate.cpp SvgTemplate.h)
