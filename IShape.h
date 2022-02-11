@@ -13,10 +13,11 @@ class IShape {
 
     public:
         string name;
+        string tagName;
         string shapeTag;
 
         string getName();
-
+        string getTagName();
         string getShapeTag();
 
 };

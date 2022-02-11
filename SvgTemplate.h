@@ -5,6 +5,9 @@
 #ifndef CPLUSPLUS_SVGTEMPLATE_H
 #define CPLUSPLUS_SVGTEMPLATE_H
 
+#include <string>
+
+using namespace std;
 
 class SvgTemplate {
     public:
@@ -12,6 +15,9 @@ class SvgTemplate {
         void setWidth(int width);
         int getHeight();
         int getWidth();
+
+        string getSvgOpeningTag();
+        string getSvgClosingTag();
 
         void askSizeOfSVG();
 

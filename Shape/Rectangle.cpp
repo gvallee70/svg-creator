@@ -6,7 +6,8 @@
 #include <sstream>
 
 Rectangle::Rectangle(){
-    this->name = "rect";
+    this->name = "Rectangle";
+    this->tagName = "rect";
 }
 
 void Rectangle::setWidth(int width){
@@ -26,7 +27,7 @@ int Rectangle::getHeight() {
 }
 
 string Rectangle::getShapeTag(){
-    stringstream toto;
-    toto << "<" << this->name << " width=\"" << this->getWidth() << "\" height=\"" << this->getHeight() <<"\"/>";
-    return toto.str();
+    stringstream shapeTag;
+    shapeTag << "<" << this->tagName << " width=\"" << this->getWidth() << "\" height=\"" << this->getHeight() <<"\"/>";
+    return shapeTag.str();
 }

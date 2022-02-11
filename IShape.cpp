@@ -8,6 +8,10 @@ string IShape::getName(){
     return this->name;
 }
 
+string IShape::getTagName() {
+    return this->tagName;
+}
+
 string IShape::getShapeTag(){
     return this->shapeTag;
 }

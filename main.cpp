@@ -25,31 +25,19 @@ void askShapeToDraw() {
     cout << "You want to draw a " << shapesNames[shapeChoice-1] << endl;
 }
 
-void askSizeOfSVG() {
-    int width, height;
-
-    cout << "Please enter a width:" << endl;
-    cin >> width;
-    svgTemplate.setWidth(width);
-
-    cout << "Please enter an height:" << endl;
-    cin >> height;
-    svgTemplate.setHeight(height);
-
-    cout << "You chose:" << endl;
-    cout << "Width: " << svgTemplate.getWidth() << endl;
-    cout << "Height: " << svgTemplate.getHeight() << endl;
-
-}
 
 int main() {
 
+    SvgTemplate svgTemplate;
     Rectangle r;
-    r.width = 100;
-    r.height = 100;
-    cout << r.getName() << endl;
+    r.width = 31;
+    r.height = 899;
+
+    svgTemplate.askSizeOfSVG();
+
+    cout <<  svgTemplate.getSvgOpeningTag() << endl;
     cout << r.getShapeTag() << endl;
-    askShapeToDraw();
-    askSizeOfSVG();
+    cout << svgTemplate.getSvgClosingTag() << endl;
+
     return 0;
 }

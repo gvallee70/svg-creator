@@ -143,6 +143,60 @@ CPlusPlus/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/build
 .PHONY : CPlusPlus/fast
 
+IShape.o: IShape.cpp.o
+
+.PHONY : IShape.o
+
+# target to build an object file
+IShape.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/IShape.cpp.o
+.PHONY : IShape.cpp.o
+
+IShape.i: IShape.cpp.i
+
+.PHONY : IShape.i
+
+# target to preprocess a source file
+IShape.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/IShape.cpp.i
+.PHONY : IShape.cpp.i
+
+IShape.s: IShape.cpp.s
+
+.PHONY : IShape.s
+
+# target to generate assembly for a file
+IShape.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/IShape.cpp.s
+.PHONY : IShape.cpp.s
+
+Shape/Rectangle.o: Shape/Rectangle.cpp.o
+
+.PHONY : Shape/Rectangle.o
+
+# target to build an object file
+Shape/Rectangle.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/Shape/Rectangle.cpp.o
+.PHONY : Shape/Rectangle.cpp.o
+
+Shape/Rectangle.i: Shape/Rectangle.cpp.i
+
+.PHONY : Shape/Rectangle.i
+
+# target to preprocess a source file
+Shape/Rectangle.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/Shape/Rectangle.cpp.i
+.PHONY : Shape/Rectangle.cpp.i
+
+Shape/Rectangle.s: Shape/Rectangle.cpp.s
+
+.PHONY : Shape/Rectangle.s
+
+# target to generate assembly for a file
+Shape/Rectangle.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/Shape/Rectangle.cpp.s
+.PHONY : Shape/Rectangle.cpp.s
+
 SvgTemplate.o: SvgTemplate.cpp.o
 
 .PHONY : SvgTemplate.o
@@ -206,6 +260,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... CPlusPlus"
+	@echo "... IShape.o"
+	@echo "... IShape.i"
+	@echo "... IShape.s"
+	@echo "... Shape/Rectangle.o"
+	@echo "... Shape/Rectangle.i"
+	@echo "... Shape/Rectangle.s"
 	@echo "... SvgTemplate.o"
 	@echo "... SvgTemplate.i"
 	@echo "... SvgTemplate.s"
