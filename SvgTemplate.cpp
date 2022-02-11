@@ -4,7 +4,7 @@
 
 #include "SvgTemplate.h"
 #include <iostream>
-#include <sstream>
+#include <fstream>
 
 using namespace std;
 
@@ -25,22 +25,17 @@ int SvgTemplate::getWidth() {
 }
 
 string SvgTemplate::getSvgOpeningTag() {
-    stringstream svgTag;
-    svgTag << "<svg width=\"" << this->getWidth() << "\" height=\"" << this->getHeight() <<"\">";
-    return svgTag.str();
+    return "<svg xmlns=\"http://www.w3.org/2000/svg\">";
 }
 
 string SvgTemplate::getSvgClosingTag() {
     return "</svg>";
 }
 
-void SvgTemplate::askSizeOfSVG() {
-    int height, width;
-    cout << "Please enter the width of SVG:" << endl;
-    cin >> width;
-    this->setWidth(width);
 
-    cout << "Please enter the height of SVG:" << endl;
-    cin >> height;
-    this->setHeight(height);
+void SvgTemplate::exportToSvgFile(string filename, string content) {
+    std::ofstream outfile (filename + ".svg");
+
+    outfile << content << std::endl;
+    outfile.close();
 }

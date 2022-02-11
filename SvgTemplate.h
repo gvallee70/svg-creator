@@ -19,7 +19,7 @@ class SvgTemplate {
         string getSvgOpeningTag();
         string getSvgClosingTag();
 
-        void askSizeOfSVG();
+        void exportToSvgFile(string filename, string content);
 
     //Shape addShape(Shape shape);
     private:

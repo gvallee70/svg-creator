@@ -1,6 +1,7 @@
 #include <iostream>
 #include "SvgTemplate.h"
 #include "Shape/Rectangle.h"
+#include <sstream>
 
 using namespace std;
 
@@ -29,15 +30,16 @@ void askShapeToDraw() {
 int main() {
 
     SvgTemplate svgTemplate;
-    Rectangle r;
-    r.width = 31;
-    r.height = 899;
+    Rectangle rectangle;
+    rectangle.width = 200;
+    rectangle.height = 100;
 
-    svgTemplate.askSizeOfSVG();
+    stringstream content;
+    content << svgTemplate.getSvgOpeningTag() << "\n" << rectangle.getShapeTag() << "\n" << svgTemplate.getSvgClosingTag();
 
-    cout <<  svgTemplate.getSvgOpeningTag() << endl;
-    cout << r.getShapeTag() << endl;
-    cout << svgTemplate.getSvgClosingTag() << endl;
+    cout << content.str() << endl;
+
+    svgTemplate.exportToSvgFile("rectangleShape", content.str());
 
     return 0;
 }

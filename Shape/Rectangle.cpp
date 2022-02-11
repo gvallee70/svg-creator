@@ -28,6 +28,6 @@ int Rectangle::getHeight() {
 
 string Rectangle::getShapeTag(){
     stringstream shapeTag;
-    shapeTag << "<" << this->tagName << " width=\"" << this->getWidth() << "\" height=\"" << this->getHeight() <<"\"/>";
+    shapeTag << "<" << this->tagName << " width=\"" << this->getWidth() << "\" height=\"" << this->getHeight() <<"\" style=\"fill:rgb(0,0,0);\"/>";
     return shapeTag.str();
 }
