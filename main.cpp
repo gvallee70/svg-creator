@@ -45,7 +45,10 @@ void askSizeOfSVG() {
 int main() {
 
     Rectangle r;
+    r.width = 100;
+    r.height = 100;
     cout << r.getName() << endl;
+    cout << r.getShapeTag() << endl;
     askShapeToDraw();
     askSizeOfSVG();
     return 0;

@@ -13,6 +13,8 @@ class SvgTemplate {
         int getHeight();
         int getWidth();
 
+        void askSizeOfSVG();
+
     //Shape addShape(Shape shape);
     private:
         int height;

@@ -3,6 +3,7 @@
 //
 
 #include "Rectangle.h"
+#include <sstream>
 
 Rectangle::Rectangle(){
     this->name = "rect";
@@ -25,6 +26,7 @@ int Rectangle::getHeight() {
 }
 
 string Rectangle::getShapeTag(){
-    string toto = "<" + this->name + "width=" + this->getWidth() + "\" height=\"100\" ;\" />";
-    return "<" + this->name + "width=" + this->getWidth() + "\" height=\"100\" style=\"fill:rgb(0,0,255);\" />";
+    stringstream toto;
+    toto << "<" << this->name << " width=\"" << this->getWidth() << "\" height=\"" << this->getHeight() <<"\"/>";
+    return toto.str();
 }
