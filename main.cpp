@@ -1,5 +1,6 @@
 #include <iostream>
 #include "SvgTemplate.h"
+#include "Shape/Rectangle.h"
 
 using namespace std;
 
@@ -43,6 +44,8 @@ void askSizeOfSVG() {
 
 int main() {
 
+    Rectangle r;
+    cout << r.getName() << endl;
     askShapeToDraw();
     askSizeOfSVG();
     return 0;
