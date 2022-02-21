@@ -7,8 +7,8 @@ using namespace std;
 
 SvgTemplate svgTemplate;
 
-
-string shapesNames [4] = { "Rectangle", "Circle", "Segment", "Polygon" };
+//string shapesNames [4] = { "Rectangle", "Circle", "Segment", "Polygon" };
+IShape shapes [1] = { Rectangle()};
 
 void askShapeToDraw() {
     cout << "Please, select the shape you want to draw: " << endl;
@@ -16,20 +16,30 @@ void askShapeToDraw() {
     int i = 1;
     int shapeChoice;
 
-    for(string shapeName : shapesNames) {
+    /*for(string shapeName : shapesNames) {
         cout << i << ". " << shapeName << endl;
+        i++;
+    }*/
+
+    for(IShape shape : shapes) {
+        cout << i << ". " << shape.getName() << endl;
         i++;
     }
 
     cin >> shapeChoice;
 
-    cout << "You want to draw a " << shapesNames[shapeChoice-1] << endl;
+    IShape myShape = shapes[shapeChoice];
+
+    myShape.askShapeDim();
+
+    //cout << "You want to draw a " << shapesNames[shapeChoice-1] << endl;
 }
 
 
 int main() {
 
-    SvgTemplate svgTemplate;
+    askShapeToDraw();
+    /*SvgTemplate svgTemplate;
     Rectangle rectangle;
     rectangle.width = 200;
     rectangle.height = 100;
@@ -39,7 +49,7 @@ int main() {
 
     cout << content.str() << endl;
 
-    svgTemplate.exportToSvgFile("rectangleShape", content.str());
+    svgTemplate.exportToSvgFile("rectangleShape", content.str());*/
 
     return 0;
 }

@@ -4,6 +4,9 @@
 
 #include "Rectangle.h"
 #include <sstream>
+#include <iostream>
+
+using namespace std;
 
 Rectangle::Rectangle(){
     this->name = "Rectangle";
@@ -30,4 +33,17 @@ string Rectangle::getShapeTag(){
     stringstream shapeTag;
     shapeTag << "<" << this->tagName << " width=\"" << this->getWidth() << "\" height=\"" << this->getHeight() <<"\" style=\"fill:rgb(0,0,0);\"/>";
     return shapeTag.str();
+}
+
+void IShape::askShapeDim(){
+
+    int width, height;
+
+    cout << "Height : ";
+    cin >> height;
+    cout << "Width : ";
+    cin >> width;
+
+
+
 }

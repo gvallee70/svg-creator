@@ -3,6 +3,9 @@
 //
 
 #include "IShape.h"
+#include "iostream"
+
+using namespace std;
 
 string IShape::getName(){
     return this->name;
@@ -15,3 +18,4 @@ string IShape::getTagName() {
 string IShape::getShapeTag(){
     return this->shapeTag;
 }
+

@@ -22,6 +22,8 @@ class Rectangle : public IShape {
 
         string getShapeTag();
 
+        void askShapeDim();
+
 };
 
 #endif //CPLUSPLUS_RECTANGLE_H

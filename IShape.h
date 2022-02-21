@@ -19,6 +19,7 @@ class IShape {
         string getName();
         string getTagName();
         string getShapeTag();
+        void askShapeDim();
 
 };
 
