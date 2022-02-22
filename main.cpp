@@ -1,6 +1,8 @@
 #include <iostream>
 #include "SvgTemplate.h"
 #include "Shape/Rectangle.h"
+#include "Shape/Circle.h"
+#include "Shape/Segment.h"
 #include <sstream>
 
 using namespace std;
@@ -8,31 +10,35 @@ using namespace std;
 SvgTemplate svgTemplate;
 
 //string shapesNames [4] = { "Rectangle", "Circle", "Segment", "Polygon" };
-IShape shapes [1] = { Rectangle()};
+//IShape *shapes [1] = {  new Rectangle()};
 
 void askShapeToDraw() {
+
+    IShape *shapes[3] = {new Rectangle(), new Circle(), new Segment()};
+
     cout << "Please, select the shape you want to draw: " << endl;
 
     int i = 1;
     int shapeChoice;
 
-    /*for(string shapeName : shapesNames) {
-        cout << i << ". " << shapeName << endl;
-        i++;
-    }*/
-
-    for(IShape shape : shapes) {
-        cout << i << ". " << shape.getName() << endl;
+    for(IShape *shape : shapes) {
+        cout << i << ". " << shape->getName() << endl;
         i++;
     }
 
     cin >> shapeChoice;
 
-    IShape myShape = shapes[shapeChoice];
+    IShape *myShape = shapes[shapeChoice-1];
+    cout << "You want to draw a " << myShape->getName() << endl;
+    myShape->askShapeDim();
 
-    myShape.askShapeDim();
+    stringstream content;
+    content << svgTemplate.getSvgOpeningTag() << "\n" << myShape->getShapeTag() << "\n" << svgTemplate.getSvgClosingTag();
 
-    //cout << "You want to draw a " << shapesNames[shapeChoice-1] << endl;
+    cout << content.str() << endl;
+
+    svgTemplate.exportToSvgFile(myShape->getName(), content.str());
+
 }
 
 

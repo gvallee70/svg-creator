@@ -8,7 +8,7 @@
 
 using namespace std;
 
-Rectangle::Rectangle(){
+/*Rectangle::Rectangle(){
     this->name = "Rectangle";
     this->tagName = "rect";
 }
@@ -33,9 +33,9 @@ string Rectangle::getShapeTag(){
     stringstream shapeTag;
     shapeTag << "<" << this->tagName << " width=\"" << this->getWidth() << "\" height=\"" << this->getHeight() <<"\" style=\"fill:rgb(0,0,0);\"/>";
     return shapeTag.str();
-}
+}*/
 
-void IShape::askShapeDim(){
+/*void IShape::askShapeDim(){
 
     int width, height;
 
@@ -44,6 +44,7 @@ void IShape::askShapeDim(){
     cout << "Width : ";
     cin >> width;
 
+    //this->setWidth(width);
+    //this->setHeight(height);
 
-
-}
+}*/

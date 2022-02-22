@@ -25,7 +25,7 @@ int SvgTemplate::getWidth() {
 }
 
 string SvgTemplate::getSvgOpeningTag() {
-    return "<svg xmlns=\"http://www.w3.org/2000/svg\">";
+    return "<svg viewBox=\"0 0 300 300\" xmlns=\"http://www.w3.org/2000/svg\">";
 }
 
 string SvgTemplate::getSvgClosingTag() {

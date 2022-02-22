@@ -7,7 +7,7 @@
 
 using namespace std;
 
-string IShape::getName(){
+/*string IShape::getName(){
     return this->name;
 }
 
@@ -18,4 +18,4 @@ string IShape::getTagName() {
 string IShape::getShapeTag(){
     return this->shapeTag;
 }
-
+*/

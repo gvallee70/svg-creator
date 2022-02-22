@@ -12,14 +12,21 @@ using namespace std;
 class IShape {
 
     public:
-        string name;
+        /*string name;
         string tagName;
         string shapeTag;
 
         string getName();
         string getTagName();
         string getShapeTag();
-        void askShapeDim();
+
+        virtual void askShapeDim() = 0;*/
+
+        string shapeTag;
+
+        virtual string getShapeTag() = 0;
+        virtual void askShapeDim() = 0;
+        virtual string getName() = 0;
 
 };
 
