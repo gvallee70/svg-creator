@@ -1,4 +1,4 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/GwendalPadam/Documents/Dev/ESGI/4MOC/Projets/CPlusPlus
+"C:\Program Files\JetBrains\CLion 2021.3.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2021.3.2/bin/ninja/win/ninja.exe" -G Ninja C:\Users\kissm\OneDrive\Documents\Scolaire\C++\svg-creator\svg-creator
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/GwendalPadam/Documents/Dev/ESGI/4MOC/Projets/CPlusPlus/cmake-build-debug
+-- Build files have been written to: C:/Users/kissm/OneDrive/Documents/Scolaire/C++/svg-creator/svg-creator/cmake-build-debug

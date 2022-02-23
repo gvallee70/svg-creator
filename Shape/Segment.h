@@ -8,18 +8,13 @@
 #include "iostream"
 #include "sstream"
 #include "../IShape.h"
+#include "../Point.h"
 
 class Segment: public IShape{
 
     private:
-        int x1;
-        int x2;
-        int y1;
-        int y2;
-        void setX1(int x1) { this->x1 = x1; }
-        void setX2(int x2) { this->x2 = x2; }
-        void setY1(int y1) { this->y1 = y1; }
-        void setY2(int y2) { this->y2 = y2; }
+        Point p1;
+        Point p2;
 
 
     public:
@@ -27,10 +22,7 @@ class Segment: public IShape{
             this->name = "Segment";
             this->tagName = "line";
         }
-        int getX1() const { return this->x1; }
-        int getX2() const { return this->x2; }
-        int getY1() const { return this->y1; }
-        int getY2() const { return this->y2; }
+
 
         
         //IShape methods
@@ -38,26 +30,27 @@ class Segment: public IShape{
 
         string getShapeTag() override{
             stringstream shapeTag;
-            shapeTag << "<" << this->tagName << " x1=\"" << this->getX1() << "\" x2=\"" << this->getX2() << "\" y1=\"" << this->getY1() << "\" y2=\"" << this->getY2() <<"\" stroke=\"" << this->getShapeColor()->getColorTag() << "\"""/>";
+            shapeTag << "<" << this->tagName << " x1=\"" << this->p1.getX() << "\" x2=\"" << this->p2.getX() << "\" y1=\"" << this->p1.getY() << "\" y2=\"" << this->p2.getY() <<"\" stroke=\"" << this->getShapeColor()->getColorTag() << "\"""/>";
             return shapeTag.str();
         }
 
         void askShapeDim() override {
             int x1, x2, y1, y2;
 
-            cout << "x1 : ";
+            cout << "--- Point 1 --- " << endl;
+            cout << "x: ";
             cin >> x1;
-            cout << "x2 : ";
-            cin >> x2;
-            cout << "y1 : ";
+            cout << "y:";
             cin >> y1;
-            cout << "y2 : ";
-            cin >> y2;
+            p1.setPoint(x1,y1);
 
-            this->setX1(x1);
-            this->setX2(x2);
-            this->setY1(y1);
-            this->setY2(y2);
+
+            cout << "--- Point 2 --- " << endl;
+            cout << "x:";
+            cin >> x2;
+            cout << "y:";
+            cin >> y2;
+            p2.setPoint(x2,y2);
 
         }
 
