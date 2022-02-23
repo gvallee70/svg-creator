@@ -7,7 +7,7 @@
 
 using namespace std;
 
-/*string IShape::getName(){
+/*string IShape::getColorName(){
     return this->name;
 }
 
@@ -19,3 +19,4 @@ string IShape::getShapeTag(){
     return this->shapeTag;
 }
 */
+

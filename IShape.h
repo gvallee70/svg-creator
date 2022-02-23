@@ -6,28 +6,43 @@
 #define CPLUSPLUS_ISHAPE_H
 
 #include <string>
+#include <iostream>
+#include "Color.h"
 
 using namespace std;
 
 class IShape {
 
-    public:
-        /*string name;
+    protected:
+        string name;
         string tagName;
-        string shapeTag;
 
-        string getName();
-        string getTagName();
-        string getShapeTag();
+        Color* shapeColor;
 
-        virtual void askShapeDim() = 0;*/
+    private:
+        void setShapeColor(Color *pColor) { this->shapeColor = pColor; };
 
-        string shapeTag;
-
+    public:
+        virtual string getName() = 0;
         virtual string getShapeTag() = 0;
         virtual void askShapeDim() = 0;
-        virtual string getName() = 0;
 
+        Color* getShapeColor() const {  return this->shapeColor; };
+        void askShapeColor() {
+            cout << "What color?" << endl;
+
+            int i = 1;
+            int colorChoice;
+            vector<Color*> colors = Color::getColors();
+
+            for(Color *color : colors) {
+                cout << i << ". " << color->getColorName() << endl;
+                i++;
+            }
+            cin >> colorChoice;
+
+            this->setShapeColor(colors[colorChoice - 1]);
+        }
 };
 
 

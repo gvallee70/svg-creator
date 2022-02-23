@@ -42,45 +42,41 @@ using namespace std;
 */
 
 class Rectangle : public IShape {
-public:
-    int width;
-    int height;
-    string name;
-    string tagName;
+    private:
+        int width;
+        int height;
+        void setWidth(int width) { this->width = width; }
+        void setHeight(int height) { this->height = height; }
 
-    Rectangle(){
-        this->name = "Rectangle";
-        this->tagName = "rect";
-    }
+    public:
+        Rectangle() {
+            this->name = "Rectangle";
+            this->tagName = "rect";
+        }
 
-    int getWidth() { return width; }
+        int getWidth() const { return this->width; }
+        int getHeight() const { return this->height; }
 
-    int getHeight() { return height; }
+        //IShape methods
+        string getName() override { return this->name; }
 
-    string getName() { return name; }
+        string getShapeTag() override{
+            stringstream shapeTag;
+            shapeTag << "<" << this->tagName << " width=\"" << this->getWidth() << "\" height=\"" << this->getHeight() <<"\" fill=\"" << this->getShapeColor()->getColorTag() << "\"""/>";
+            return shapeTag.str();
+        }
 
-    void setWidth(int width) { this->width = width; }
+        void askShapeDim() override {
+            int width, height;
+            cout << "Height : ";
+            cin >> height;
+            cout << "Width : ";
+            cin >> width;
 
-    void setHeight(int height) { this->height = height; }
+            this->setWidth(width);
+            this->setHeight(height);
 
-    string getShapeTag(){
-        stringstream shapeTag;
-        shapeTag << "<" << this->tagName << " width=\"" << this->getWidth() << "\" height=\"" << this->getHeight() <<"\" style=\"fill:rgb(0,0,0);\"/>";
-        return shapeTag.str();
-    }
-
-    void askShapeDim() {
-        int width, height;
-
-        cout << "Height : ";
-        cin >> height;
-        cout << "Width : ";
-        cin >> width;
-
-        this->setWidth(width);
-        this->setHeight(height);
-
-    }
+        }
 };
 
 #endif

@@ -9,7 +9,7 @@ using namespace std;
 
 SvgTemplate svgTemplate;
 
-//string shapesNames [4] = { "Rectangle", "Circle", "Segment", "Polygon" };
+//string shapesNames [4] = 1{ "Rectangle", "Circle", "Segment", "Polygon" };
 //IShape *shapes [1] = {  new Rectangle()};
 
 void askShapeToDraw() {
@@ -31,6 +31,7 @@ void askShapeToDraw() {
     IShape *myShape = shapes[shapeChoice-1];
     cout << "You want to draw a " << myShape->getName() << endl;
     myShape->askShapeDim();
+    myShape->askShapeColor();
 
     stringstream content;
     content << svgTemplate.getSvgOpeningTag() << "\n" << myShape->getShapeTag() << "\n" << svgTemplate.getSvgClosingTag();
