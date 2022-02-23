@@ -80,16 +80,34 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/GwendalPadam/Documents/Dev/ESGI/4MOC/Projets/CPlusPlus/Color.cpp">
+			<Option target="CPlusPlus"/>
+		</Unit>
+		<Unit filename="/Users/GwendalPadam/Documents/Dev/ESGI/4MOC/Projets/CPlusPlus/Color.h">
+			<Option target="CPlusPlus"/>
+		</Unit>
 		<Unit filename="/Users/GwendalPadam/Documents/Dev/ESGI/4MOC/Projets/CPlusPlus/IShape.cpp">
 			<Option target="CPlusPlus"/>
 		</Unit>
 		<Unit filename="/Users/GwendalPadam/Documents/Dev/ESGI/4MOC/Projets/CPlusPlus/IShape.h">
 			<Option target="CPlusPlus"/>
 		</Unit>
+		<Unit filename="/Users/GwendalPadam/Documents/Dev/ESGI/4MOC/Projets/CPlusPlus/Shape/Circle.cpp">
+			<Option target="CPlusPlus"/>
+		</Unit>
+		<Unit filename="/Users/GwendalPadam/Documents/Dev/ESGI/4MOC/Projets/CPlusPlus/Shape/Circle.h">
+			<Option target="CPlusPlus"/>
+		</Unit>
 		<Unit filename="/Users/GwendalPadam/Documents/Dev/ESGI/4MOC/Projets/CPlusPlus/Shape/Rectangle.cpp">
 			<Option target="CPlusPlus"/>
 		</Unit>
 		<Unit filename="/Users/GwendalPadam/Documents/Dev/ESGI/4MOC/Projets/CPlusPlus/Shape/Rectangle.h">
+			<Option target="CPlusPlus"/>
+		</Unit>
+		<Unit filename="/Users/GwendalPadam/Documents/Dev/ESGI/4MOC/Projets/CPlusPlus/Shape/Segment.cpp">
+			<Option target="CPlusPlus"/>
+		</Unit>
+		<Unit filename="/Users/GwendalPadam/Documents/Dev/ESGI/4MOC/Projets/CPlusPlus/Shape/Segment.h">
 			<Option target="CPlusPlus"/>
 		</Unit>
 		<Unit filename="/Users/GwendalPadam/Documents/Dev/ESGI/4MOC/Projets/CPlusPlus/SvgTemplate.cpp">

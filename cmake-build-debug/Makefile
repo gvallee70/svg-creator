@@ -143,6 +143,33 @@ CPlusPlus/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/build
 .PHONY : CPlusPlus/fast
 
+Color.o: Color.cpp.o
+
+.PHONY : Color.o
+
+# target to build an object file
+Color.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/Color.cpp.o
+.PHONY : Color.cpp.o
+
+Color.i: Color.cpp.i
+
+.PHONY : Color.i
+
+# target to preprocess a source file
+Color.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/Color.cpp.i
+.PHONY : Color.cpp.i
+
+Color.s: Color.cpp.s
+
+.PHONY : Color.s
+
+# target to generate assembly for a file
+Color.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/Color.cpp.s
+.PHONY : Color.cpp.s
+
 IShape.o: IShape.cpp.o
 
 .PHONY : IShape.o
@@ -170,6 +197,33 @@ IShape.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/IShape.cpp.s
 .PHONY : IShape.cpp.s
 
+Shape/Circle.o: Shape/Circle.cpp.o
+
+.PHONY : Shape/Circle.o
+
+# target to build an object file
+Shape/Circle.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/Shape/Circle.cpp.o
+.PHONY : Shape/Circle.cpp.o
+
+Shape/Circle.i: Shape/Circle.cpp.i
+
+.PHONY : Shape/Circle.i
+
+# target to preprocess a source file
+Shape/Circle.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/Shape/Circle.cpp.i
+.PHONY : Shape/Circle.cpp.i
+
+Shape/Circle.s: Shape/Circle.cpp.s
+
+.PHONY : Shape/Circle.s
+
+# target to generate assembly for a file
+Shape/Circle.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/Shape/Circle.cpp.s
+.PHONY : Shape/Circle.cpp.s
+
 Shape/Rectangle.o: Shape/Rectangle.cpp.o
 
 .PHONY : Shape/Rectangle.o
@@ -196,6 +250,33 @@ Shape/Rectangle.s: Shape/Rectangle.cpp.s
 Shape/Rectangle.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/Shape/Rectangle.cpp.s
 .PHONY : Shape/Rectangle.cpp.s
+
+Shape/Segment.o: Shape/Segment.cpp.o
+
+.PHONY : Shape/Segment.o
+
+# target to build an object file
+Shape/Segment.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/Shape/Segment.cpp.o
+.PHONY : Shape/Segment.cpp.o
+
+Shape/Segment.i: Shape/Segment.cpp.i
+
+.PHONY : Shape/Segment.i
+
+# target to preprocess a source file
+Shape/Segment.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/Shape/Segment.cpp.i
+.PHONY : Shape/Segment.cpp.i
+
+Shape/Segment.s: Shape/Segment.cpp.s
+
+.PHONY : Shape/Segment.s
+
+# target to generate assembly for a file
+Shape/Segment.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/Shape/Segment.cpp.s
+.PHONY : Shape/Segment.cpp.s
 
 SvgTemplate.o: SvgTemplate.cpp.o
 
@@ -260,12 +341,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... CPlusPlus"
+	@echo "... Color.o"
+	@echo "... Color.i"
+	@echo "... Color.s"
 	@echo "... IShape.o"
 	@echo "... IShape.i"
 	@echo "... IShape.s"
+	@echo "... Shape/Circle.o"
+	@echo "... Shape/Circle.i"
+	@echo "... Shape/Circle.s"
 	@echo "... Shape/Rectangle.o"
 	@echo "... Shape/Rectangle.i"
 	@echo "... Shape/Rectangle.s"
+	@echo "... Shape/Segment.o"
+	@echo "... Shape/Segment.i"
+	@echo "... Shape/Segment.s"
 	@echo "... SvgTemplate.o"
 	@echo "... SvgTemplate.i"
 	@echo "... SvgTemplate.s"
