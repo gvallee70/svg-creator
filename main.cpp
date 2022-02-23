@@ -3,6 +3,7 @@
 #include "Shape/Rectangle.h"
 #include "Shape/Circle.h"
 #include "Shape/Segment.h"
+#include "Shape/Polygon.h"
 #include <sstream>
 
 using namespace std;
@@ -14,7 +15,7 @@ SvgTemplate svgTemplate;
 
 void askShapeToDraw() {
 
-    IShape *shapes[3] = {new Rectangle(), new Circle(), new Segment()};
+    IShape *shapes[4] = {new Rectangle(), new Circle(), new Segment(), new Polygon()};
 
     cout << "Please, select the shape you want to draw: " << endl;
 
