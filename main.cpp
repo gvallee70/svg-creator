@@ -4,8 +4,8 @@
 #include "Shape/Circle.h"
 #include "Shape/Segment.h"
 #include "Shape/Polygon.h"
+#include "MyCLI.h"
 #include <sstream>
-
 using namespace std;
 
 SvgTemplate svgTemplate;
@@ -46,7 +46,10 @@ void askShapeToDraw() {
 
 int main() {
 
-    askShapeToDraw();
+    //askShapeToDraw();
+    MyCLI cli;
+    cli.mainProgr();
+
     /*SvgTemplate svgTemplate;
     Rectangle rectangle;
     rectangle.width = 200;
