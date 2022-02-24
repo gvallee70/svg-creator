@@ -29,11 +29,11 @@ public:
         return sizeof(*shapes);
     }
 
-    IShape* getShapeToDraw(){
+    IShape* getShapeToDraw() const{
         return shapeToDraw;
     }
 
-    string getSvgTag(){
+    string getSvgTag() const{
         return svgTag;
     }
 
@@ -55,12 +55,12 @@ public:
     }
 
 
-    void createShape() {
+    void createShape() const {
         cout << "You want to draw a " << shapeToDraw->getName() << endl;
         shapeToDraw->askShapeDim();
     }
 
-    void addColorShape() {
+    void addColorShape() const {
         shapeToDraw->askShapeColor();
     }
 
