@@ -13,7 +13,7 @@ SvgTemplate svgTemplate;
 //string shapesNames [4] = 1{ "Rectangle", "Circle", "Segment", "Polygon" };
 //IShape *shapes [1] = {  new Rectangle()};
 
-void askShapeToDraw() {
+/*void askShapeToDraw() {
 
     IShape *shapes[4] = {new Rectangle(), new Circle(), new Segment(), new Polygon()};
 
@@ -39,9 +39,9 @@ void askShapeToDraw() {
 
     cout << content.str() << endl;
 
-    svgTemplate.exportToSvgFile(myShape->getName(), content.str());
+    svgTemplate.exportToSvgFile(myShape->getName());
 
-}
+}*/
 
 
 int main() {

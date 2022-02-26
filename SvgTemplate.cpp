@@ -32,8 +32,15 @@ string SvgTemplate::getSvgClosingTag() {
     return "</svg>";
 }
 
+void SvgTemplate::setContent(string tag){
+    this->content = tag;
+}
 
-void SvgTemplate::exportToSvgFile(string filename, string content) {
+string SvgTemplate::getContent(){
+    return this->content;
+}
+
+void SvgTemplate::exportToSvgFile(string filename) {
     std::ofstream outfile (filename + ".svg");
 
     outfile << content << std::endl;

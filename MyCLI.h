@@ -1,7 +1,3 @@
-//
-// Created by kissm on 24/02/2022.
-//
-
 #ifndef CPLUSPLUS_MYCLI_H
 #define CPLUSPLUS_MYCLI_H
 #include <iostream>
@@ -10,7 +6,10 @@
 #include "Shape/Circle.h"
 #include "Shape/Segment.h"
 #include "Shape/Polygon.h"
+#include "MyLibrary.h"
 #include <sstream>
+#include <iostream>
+#include <fstream>
 using namespace std;
 
 class MyCLI {
@@ -19,7 +18,7 @@ public:
     IShape *shapes[4] = {new Rectangle(), new Circle(), new Segment(), new Polygon()};
     SvgTemplate svgTemplate;
     string svgTag;
-
+    MyLibrary lib;
 
     IShape* getListShapes(){
         return *shapes;
@@ -64,36 +63,83 @@ public:
         shapeToDraw->askShapeColor();
     }
 
-
     void createSvgTag(){
-       stringstream content;
-       content << svgTemplate.getSvgOpeningTag() << "\n" << shapeToDraw->getShapeTag() << "\n" << svgTemplate.getSvgClosingTag();
-       cout << content.str() << endl;
-       setSvgTag(content.str());
+        stringstream content;
+        content << svgTemplate.getSvgOpeningTag() << "\n" << shapeToDraw->getShapeTag() << "\n" << svgTemplate.getSvgClosingTag();
+        cout << content.str() << endl;
+        setSvgTag(content.str());
     }
 
     void createSvgFile(){
-        svgTemplate.exportToSvgFile(shapeToDraw->getName(), svgTag);
+        svgTemplate.setContent(svgTag);
+        svgTemplate.exportToSvgFile(shapeToDraw->getName());
+        lib.addDraw(svgTemplate);
     }
 
 
     void askShapeToDraw() {
         int shapeChoice;
-        cout << this->sizeListShape();
         cout << "Please, select the shape you want to draw: " << endl;
         printListShapes();
         cin >> shapeChoice;
         this->setShapeToDraw(shapes[shapeChoice-1]);
     }
 
-    void mainProgr(){
+    void choiceDrawShape(){
         askShapeToDraw();
         createShape();
         addColorShape();
         createSvgTag();
         createSvgFile();
     }
-};
 
+    void choiceMerge(){
+        cout << "Please, select two drawings you want to merge: " << endl;
+    }
+
+    void choiceSeeMyLibrary(){
+        cout << "------- Content of your library: -------- " << endl;
+        cout << lib.getMyDrawingsContent() << endl;
+    }
+
+    void choiceQuitProg(){
+        cout << "Bye bye" << endl;
+    }
+
+    int initProgr(){
+        int initChoice;
+        cout << "Hello, please select your choice:" << endl;
+        cout << "1/ Draw new shape" << endl;
+        cout << "2/ Merge two drawings" << endl;
+        cout << "3/ Consult your library" << endl;
+        cout << "4/ Quit " << endl;
+        cin >> initChoice;
+        return initChoice;
+    }
+
+    void mainProgr(){
+        int choice = 0;
+        while(choice != 4) {
+            choice = initProgr();
+
+            switch (choice) {
+                case 1:
+                    choiceDrawShape();
+                    break;
+                case 2:
+                    choiceMerge();
+                    break;
+                case 3:
+                    choiceSeeMyLibrary();
+                    break;
+                case 4:
+                    choiceQuitProg();
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+};
 
 #endif //CPLUSPLUS_MYCLI_H
