@@ -17,10 +17,18 @@ class MyLibrary {
     public:
         vector<SvgTemplate> myDrawings;
 
-        string getMyDrawingsContent(){
+        string getMyDrawingsSVGTag(){
             stringstream content;
             for (SvgTemplate drawing: myDrawings){
-                content << drawing.getContent() << "\n";
+                content << drawing.getSVGTag() << "\n";
+            }
+            return content.str();
+        }
+
+        string getMyDrawingsName(){
+            stringstream content;
+            for (SvgTemplate drawing: myDrawings){
+                content << drawing.getDrawName() << "\n";
             }
             return content.str();
         }

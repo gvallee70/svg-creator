@@ -19,17 +19,28 @@ class SvgTemplate {
         string getSvgOpeningTag();
         string getSvgClosingTag();
 
-        void setContent(string tag);
-        string getContent();
+        void setShapeTag(string tag);
+        string getShapeTag();
 
-        void exportToSvgFile(string filename);
+        void exportToSvgFile();
+
+        void mergeTwoDraw(string name1, string name2);
+
+        void setSVGTag(string svgTag);
+        string getSVGTag();
+
+        void setDrawName(string drawName);
+        string getDrawName();
+
 
     //Shape addShape(Shape shape);
     private:
         int height;
         int width;
 
-        string content;
+        string shapeTag;
+        string svgTag;
+        string drawName;
 };
 
 

@@ -5,6 +5,7 @@
 #include "SvgTemplate.h"
 #include <iostream>
 #include <fstream>
+#include <sstream>
 
 using namespace std;
 
@@ -32,17 +33,42 @@ string SvgTemplate::getSvgClosingTag() {
     return "</svg>";
 }
 
-void SvgTemplate::setContent(string tag){
-    this->content = tag;
+void SvgTemplate::setShapeTag(string tag){
+    this->shapeTag = tag;
 }
 
-string SvgTemplate::getContent(){
-    return this->content;
+string SvgTemplate::getShapeTag(){
+    return this->shapeTag;
 }
 
-void SvgTemplate::exportToSvgFile(string filename) {
-    std::ofstream outfile (filename + ".svg");
+void SvgTemplate::exportToSvgFile() {
+    std::ofstream outfile (this->getDrawName() + ".svg");
 
-    outfile << content << std::endl;
+    outfile << svgTag << std::endl;
     outfile.close();
+}
+
+void SvgTemplate::mergeTwoDraw(string shapeTag1, string shapeTag2){
+    stringstream str;
+    str << this->getSvgOpeningTag() << "\n";
+    str << shapeTag1 << "\n";
+    str << shapeTag2 << "\n";
+    str << this->getSvgClosingTag();
+    this->setSVGTag(str.str());
+}
+
+void SvgTemplate::setSVGTag(string svgTag){
+    this->svgTag = svgTag;
+}
+
+string SvgTemplate::getSVGTag(){
+    return this->svgTag;
+}
+
+void SvgTemplate::setDrawName(string drawName){
+    this->drawName = drawName;
+}
+
+string SvgTemplate::getDrawName() {
+    return this->drawName;
 }

@@ -17,7 +17,6 @@ public:
     IShape* shapeToDraw;
     IShape *shapes[4] = {new Rectangle(), new Circle(), new Segment(), new Polygon()};
     SvgTemplate svgTemplate;
-    string svgTag;
     MyLibrary lib;
 
     IShape* getListShapes(){
@@ -32,15 +31,6 @@ public:
         return shapeToDraw;
     }
 
-    string getSvgTag() const{
-        return svgTag;
-    }
-
-
-    void setSvgTag(string svg){
-        this->svgTag = svg;
-    }
-
     void setShapeToDraw(IShape* shape){
         this->shapeToDraw = shape;
     }
@@ -52,7 +42,6 @@ public:
             i++;
         }
     }
-
 
     void createShape() const {
         cout << "You want to draw a " << shapeToDraw->getName() << endl;
@@ -67,15 +56,17 @@ public:
         stringstream content;
         content << svgTemplate.getSvgOpeningTag() << "\n" << shapeToDraw->getShapeTag() << "\n" << svgTemplate.getSvgClosingTag();
         cout << content.str() << endl;
-        setSvgTag(content.str());
+        svgTemplate.setSVGTag(content.str());
     }
 
     void createSvgFile(){
-        svgTemplate.setContent(svgTag);
-        svgTemplate.exportToSvgFile(shapeToDraw->getName());
+        string filename;
+        cout << "Name of draw : ";
+        cin >> filename;
+        svgTemplate.setDrawName(filename);
+        svgTemplate.exportToSvgFile();
         lib.addDraw(svgTemplate);
     }
-
 
     void askShapeToDraw() {
         int shapeChoice;
@@ -95,11 +86,12 @@ public:
 
     void choiceMerge(){
         cout << "Please, select two drawings you want to merge: " << endl;
+        cout << lib.getMyDrawingsName() << endl;
     }
 
     void choiceSeeMyLibrary(){
         cout << "------- Content of your library: -------- " << endl;
-        cout << lib.getMyDrawingsContent() << endl;
+        cout << lib.getMyDrawingsSVGTag() << endl;
     }
 
     void choiceQuitProg(){
