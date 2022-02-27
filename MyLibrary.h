@@ -24,7 +24,7 @@ class MyLibrary {
 
         string getMyDrawingsSVGTag(){
             stringstream content;
-            for (SvgTemplate drawing: myDrawings){
+            for (SvgTemplate drawing: this->getMyDrawings()){
                 content << "-> " << drawing.getDrawName() << "\n";
                 content << drawing.getSVGTag() << "\n\n";
             }
@@ -34,7 +34,7 @@ class MyLibrary {
         string getMyDrawingsName(){
             stringstream content;
             int i = 1;
-            for (SvgTemplate drawing: myDrawings){
+            for (SvgTemplate drawing: this->getMyDrawings()){
                 content << i <<"/ " << drawing.getDrawName() << "\n";
                 i++;
             }
@@ -42,10 +42,10 @@ class MyLibrary {
         }
 
         void addDraw(SvgTemplate svg){
-            myDrawings.push_back(svg);
+            this->getMyDrawings().push_back(svg);
         }
 
-        bool nameFileExist(string filename){
+        bool filenameExists(string filename){
             string filenames = getMyDrawingsName();
             bool result = false;
             if (filenames.find(filename) != string::npos) {
@@ -55,20 +55,20 @@ class MyLibrary {
         }
 
         string getShapeTag2(int id){
-            SvgTemplate &svg = myDrawings.at(id-1);
+            SvgTemplate &svg = this->getMyDrawings().at(id-1);
             string result = svg.getShapeTagToString();
             return result;
         }
 
         SvgTemplate getSvgTemplate(int id){
-            SvgTemplate &svg = myDrawings.at(id-1);
+            SvgTemplate &svg = this->getMyDrawings().at(id-1);
             return svg;
         }
 
         void replaceSvgTemplate(int id, SvgTemplate svg){
-            myDrawings.at(id-1) = svg;
-            myDrawings.at(id-1).setSVGTag();
-            myDrawings.at(id-1).exportToSvgFile(svg);
+            this->getMyDrawings().at(id-1) = svg;
+            this->getMyDrawings().at(id-1).setSVGTag();
+            this->getMyDrawings().at(id-1).exportToSvgFile(svg);
         }
 };
 
