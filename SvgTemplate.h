@@ -8,6 +8,8 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <sstream>
+#include <fstream>
 
 using namespace std;
 
@@ -15,30 +17,81 @@ class SvgTemplate {
     public:
         vector<string> shapeTag;
 
-        void setHeight(int height);
-        void setWidth(int width);
-        int getHeight();
-        int getWidth();
+        int getHeight() { return this -> height; }
+    
+        int getWidth() { return this -> width; }
 
-        string getSvgOpeningTag();
-        string getSvgClosingTag();
+        string getSvgOpeningTag() {
+            return "<svg viewBox=\"0 0 300 300\" xmlns=\"http://www.w3.org/2000/svg\">";
+        }
 
-        void setShapeTag(vector<string> tag);
-        vector<string> getShapesTag();
-        string getShapeTagToString();
-        string getShapeTagToStringWithId();
+        string getSvgClosingTag() {
+            return "</svg>";
+        }
 
-        void exportToSvgFile(SvgTemplate svg);
+        void setShapeTag(vector<string> tag){
+            this->shapeTag = tag;
+        }
 
-        void mergeTwoDraw(string name1, string name2);
+        vector<string> getShapesTag() const{
+            return this->shapeTag;
+        }
 
-        void setSVGTag();
-        string getSVGTag();
+        void exportToSvgFile(SvgTemplate svg) {
+            std::ofstream outfile (svg.getDrawName() + ".svg");
 
-        void setDrawName(string drawName);
-        string getDrawName();
+            outfile << svg.getSVGTag() << std::endl;
+            outfile.close();
+        }
 
-        void removeShapeTag(int id);
+        void mergeTwoDraw(string shapeTag1, string shapeTag2){
+            stringstream str;
+            vector<string> v;
+            v.push_back(shapeTag1);
+            v.push_back(shapeTag2);
+            this->setShapeTag(v);
+            this->setSVGTag();
+        }
+
+        string getShapeTagToString(){
+            stringstream content;
+            for(string st: shapeTag){
+                content << st << "\n";
+            }
+            return content.str();
+        }
+
+        string getShapeTagToStringWithId(){
+            stringstream content;
+            int i = 1;
+            for(string st: shapeTag){
+                content << i << "/ " << st;
+                i++;
+            }
+            return content.str();
+        }
+
+        void setSVGTag(){
+            stringstream ss;
+            ss << this->getSvgOpeningTag() << "\n" << this->getShapeTagToString() << "\n" << this->getSvgClosingTag();
+            this->svgTag = ss.str();
+        }
+
+        string getSVGTag(){
+            return this->svgTag;
+        }
+
+        void setDrawName(string drawName){
+            this->drawName = drawName;
+        }
+
+        string getDrawName() {
+            return this->drawName;
+        }
+
+        void removeShapeTag(int id){
+            this->shapeTag.erase(shapeTag.begin()+id-1);
+        }
 
     private:
         int height;
@@ -46,6 +99,14 @@ class SvgTemplate {
 
         string svgTag;
         string drawName;
+
+        void setHeight(int height) {
+            this -> height = height;
+        }
+
+        void setWidth(int width) {
+            this -> width = width;
+        }
 
 };
 

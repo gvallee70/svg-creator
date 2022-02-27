@@ -21,37 +21,8 @@ private:
     SvgTemplate svgTemplate;
     MyLibrary lib;
 
-public:
-    static vector<IShape *> getShapesList() {
-        return vector<IShape *>{
-                new Rectangle(),
-                new Circle(),
-                new Segment(),
-                new Polygon()
-        };
-    };
-
-    static void clearAndIgnoreCIN() {
-        if (cin.fail()) {
-            cin.clear();
-            cin.ignore();
-        }
-    }
-
-    IShape* getShapeToDraw() const{
-        return this->shapeToDraw;
-    }
-
     void setShapeToDraw(IShape* shape){
         this->shapeToDraw = shape;
-    }
-
-    void printShapesList(){
-        int i = 1;
-        for (IShape *shape: this->getShapesList()) {
-            cout << i << ". " << shape->getName() << endl;
-            i++;
-        }
     }
 
     void createShape() const {
@@ -67,15 +38,20 @@ public:
         vector<string> v;
         v.push_back(this->getShapeToDraw()->getShapeTag());
         this->svgTemplate.setSVGTag();
-        svgTemplate.setShapeTag(v);
-        svgTemplate.setSVGTag();
+        this->svgTemplate.setShapeTag(v);
+        this->svgTemplate.setSVGTag();
+    }
+
+    void createSvgDraw(){
+        this->askNameOfTheDraw();
+        this->lib.addDraw(this->svgTemplate);
     }
 
     void askNameOfTheDraw() {
         string filename;
         cout << "Name of the draw: ";
         cin >> filename;
-        while(lib.nameFileExist(filename)){
+        while(lib.filenameExists(filename)){
             cout << "This name already exists. Please enter another one." << endl;
             cout << "Name of the draw : ";
             cin >> filename;
@@ -83,20 +59,16 @@ public:
         this->svgTemplate.setDrawName(filename);
     }
 
-    void createSvgDraw(){
-        askNameOfTheDraw();
-        this->lib.addDraw(this->svgTemplate);
-    }
 
     void askShapeToDraw() {
         int shapeChoice;
         cout << "Please, select the shape you want to draw: " << endl;
-        printShapesList();
+        this->printShapesList();
         cin >> shapeChoice;
 
         while(shapeChoice < 1 || shapeChoice > this->getShapesList().size()) {
             cout << "Please, select an existing choice: " << endl;
-            printShapesList();
+            this->printShapesList();
             cin >> shapeChoice;
 
             this->clearAndIgnoreCIN();
@@ -105,18 +77,18 @@ public:
     }
 
     void choiceDrawShape(){
-        askShapeToDraw();
-        createShape();
-        addShapeColor();
-        createSvgTag();
-        createSvgDraw();
+        this->askShapeToDraw();
+        this->createShape();
+        this->addShapeColor();
+        this->createSvgTag();
+        this->createSvgDraw();
     }
 
     void choiceMerge(){
         int id1 = 0, id2 = 0;
 
         cout << "Please, select two drawings you want to merge: " << endl;
-        cout << lib.getMyDrawingsName() << endl;
+        cout << this->lib.getMyDrawingsName() << endl;
 
         while(id1 < 1 || id1 > this->lib.getMyDrawings().size()) {
             cout << "Choice 1 : ";
@@ -131,7 +103,7 @@ public:
             this->clearAndIgnoreCIN();
         }
 
-        CLIMergeTwoDraw(id1, id2);
+        this->CLIMergeTwoDraw(id1, id2);
     }
 
     void CLIMergeTwoDraw(int id1, int id2){
@@ -201,7 +173,38 @@ public:
         cout << "Bye bye" << endl;
     }
 
-    int initProgram(){
+public:
+    static vector<IShape *> getShapesList() {
+        return vector<IShape *>{
+                new Rectangle(),
+                new Circle(),
+                new Segment(),
+                new Polygon()
+        };
+    };
+
+    void clearAndIgnoreCIN() {
+        if (cin.fail()) {
+            cin.clear();
+            cin.ignore();
+        }
+    }
+
+    IShape* getShapeToDraw() const{
+        return this->shapeToDraw;
+    }
+
+
+    void printShapesList(){
+        int i = 1;
+        for (IShape *shape: this->getShapesList()) {
+            cout << i << ". " << shape->getName() << endl;
+            i++;
+        }
+    }
+
+
+     int initProgram(){
         int initChoice;
 
         cout << "Hello, please select your choice:" << endl;
@@ -219,7 +222,7 @@ public:
         int choice = 0;
 
         while(choice != 6) {
-            choice = initProgram();
+            choice = this->initProgram();
 
            this->clearAndIgnoreCIN();
 
