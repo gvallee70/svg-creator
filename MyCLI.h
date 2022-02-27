@@ -54,10 +54,12 @@ public:
 
     void createSvgTag(){
         stringstream content;
+        vector<string> v;
+        v.push_back(shapeToDraw->getShapeTag());
         content << svgTemplate.getSvgOpeningTag() << "\n" << shapeToDraw->getShapeTag() << "\n" << svgTemplate.getSvgClosingTag();
         cout << content.str() << endl;
-        svgTemplate.setShapeTag(shapeToDraw->getShapeTag());
-        svgTemplate.setSVGTag(content.str());
+        svgTemplate.setShapeTag(v);
+        svgTemplate.setSVGTag();
     }
 
     void createSvgFile(SvgTemplate svg){
@@ -115,8 +117,19 @@ public:
     }
 
     void choiceDeleteElement(){
+        int id, choiceElementDelete;
         cout << "Please, select the draw you want to delete element: " << endl;
         cout << lib.getMyDrawingsName() << endl;
+        cout << "Choice : ";
+        cin >> id;
+        SvgTemplate svg = lib.getSvgTemplate(id);
+        cout << "Selectionner l'element à supprimer" << "\n";
+        cout << svg.getShapeTagToStringWithId();
+        cin >> choiceElementDelete;
+        //cout << "Avant : " << svg.getShapeTagToString();
+        svg.removeShapeTag(choiceElementDelete);
+        //cout << "Après : " << svg.getShapeTagToString();
+        lib.replaceSvgTemplate(id, svg);
     }
 
     void choiceQuitProg(){

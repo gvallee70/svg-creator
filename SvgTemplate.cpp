@@ -6,6 +6,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <vector>
 
 using namespace std;
 
@@ -33,11 +34,11 @@ string SvgTemplate::getSvgClosingTag() {
     return "</svg>";
 }
 
-void SvgTemplate::setShapeTag(string tag){
+void SvgTemplate::setShapeTag(vector<string> tag){
     this->shapeTag = tag;
 }
 
-string SvgTemplate::getShapeTag(){
+vector<string> SvgTemplate::getShapeTag(){
     return this->shapeTag;
 }
 
@@ -50,18 +51,36 @@ void SvgTemplate::exportToSvgFile() {
 
 void SvgTemplate::mergeTwoDraw(string shapeTag1, string shapeTag2){
     stringstream str;
-    stringstream shapeTag;
-    shapeTag << shapeTag1 << "\n";
-    shapeTag << shapeTag2 << "\n";
-    this->setShapeTag(shapeTag.str());
-    str << this->getSvgOpeningTag() << "\n";
-    str << this->getShapeTag() << "\n";
-    str << this->getSvgClosingTag();
-    this->setSVGTag(str.str());
+    vector<string> v;
+    v.push_back(shapeTag1);
+    v.push_back(shapeTag2);
+    this->setShapeTag(v);
+    this->setSVGTag();
 }
 
-void SvgTemplate::setSVGTag(string svgTag){
-    this->svgTag = svgTag;
+string SvgTemplate::getShapeTagToString(){
+    stringstream content;
+    for(string st: shapeTag){
+        content << st << "\n";
+    }
+    return content.str();
+}
+
+string SvgTemplate::getShapeTagToStringWithId(){
+    cout << "Vous voulez supprimer quel element ?" << "\n";
+    stringstream content;
+    int i = 1;
+    for(string st: shapeTag){
+        content << i << "/ " << st;
+        i++;
+    }
+    return content.str();
+}
+
+void SvgTemplate::setSVGTag(){
+    stringstream ss;
+    ss << this->getSvgOpeningTag() << "\n" << this->getShapeTagToString() << "\n" << this->getSvgClosingTag();
+    this->svgTag = ss.str();
 }
 
 string SvgTemplate::getSVGTag(){
@@ -74,4 +93,8 @@ void SvgTemplate::setDrawName(string drawName){
 
 string SvgTemplate::getDrawName() {
     return this->drawName;
+}
+
+void SvgTemplate::removeShapeTag(int id){
+    this->shapeTag.erase(shapeTag.begin()+id-1);
 }

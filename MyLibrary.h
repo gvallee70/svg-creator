@@ -21,7 +21,7 @@ class MyLibrary {
         string getMyDrawingsSVGTag(){
             stringstream content;
             for (SvgTemplate drawing: myDrawings){
-                content << drawing.getShapeTag() << "\n";
+                content << drawing.getSVGTag() << "\n";
             }
             return content.str();
         }
@@ -51,8 +51,19 @@ class MyLibrary {
 
         string getShapeTag2(int id){
             SvgTemplate &svg = myDrawings.at(id-1);
-            string result = svg.getShapeTag();
+            string result = svg.getShapeTagToString();
             return result;
+        }
+
+        SvgTemplate getSvgTemplate(int id){
+            SvgTemplate &svg = myDrawings.at(id-1);
+            return svg;
+        }
+
+        void replaceSvgTemplate(int id, SvgTemplate svg){
+            myDrawings.at(id-1) = svg;
+            myDrawings.at(id-1).setSVGTag();
+            myDrawings.at(id-1).exportToSvgFile();
         }
 };
 

@@ -6,11 +6,15 @@
 #define CPLUSPLUS_SVGTEMPLATE_H
 
 #include <string>
+#include <vector>
+#include <iostream>
 
 using namespace std;
 
 class SvgTemplate {
     public:
+        vector<string> shapeTag;
+
         void setHeight(int height);
         void setWidth(int width);
         int getHeight();
@@ -19,28 +23,30 @@ class SvgTemplate {
         string getSvgOpeningTag();
         string getSvgClosingTag();
 
-        void setShapeTag(string tag);
-        string getShapeTag();
+        void setShapeTag(vector<string> tag);
+        vector<string> getShapeTag();
+        string getShapeTagToString();
+        string getShapeTagToStringWithId();
 
         void exportToSvgFile();
 
         void mergeTwoDraw(string name1, string name2);
 
-        void setSVGTag(string svgTag);
+        void setSVGTag();
         string getSVGTag();
 
         void setDrawName(string drawName);
         string getDrawName();
 
+        void removeShapeTag(int id);
 
-    //Shape addShape(Shape shape);
     private:
         int height;
         int width;
 
-        string shapeTag;
         string svgTag;
         string drawName;
+
 };
 
 
