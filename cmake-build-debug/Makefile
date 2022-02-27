@@ -143,141 +143,6 @@ CPlusPlus/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/build
 .PHONY : CPlusPlus/fast
 
-Color.o: Color.cpp.o
-
-.PHONY : Color.o
-
-# target to build an object file
-Color.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/Color.cpp.o
-.PHONY : Color.cpp.o
-
-Color.i: Color.cpp.i
-
-.PHONY : Color.i
-
-# target to preprocess a source file
-Color.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/Color.cpp.i
-.PHONY : Color.cpp.i
-
-Color.s: Color.cpp.s
-
-.PHONY : Color.s
-
-# target to generate assembly for a file
-Color.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/Color.cpp.s
-.PHONY : Color.cpp.s
-
-IShape.o: IShape.cpp.o
-
-.PHONY : IShape.o
-
-# target to build an object file
-IShape.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/IShape.cpp.o
-.PHONY : IShape.cpp.o
-
-IShape.i: IShape.cpp.i
-
-.PHONY : IShape.i
-
-# target to preprocess a source file
-IShape.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/IShape.cpp.i
-.PHONY : IShape.cpp.i
-
-IShape.s: IShape.cpp.s
-
-.PHONY : IShape.s
-
-# target to generate assembly for a file
-IShape.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/IShape.cpp.s
-.PHONY : IShape.cpp.s
-
-MyCLI.o: MyCLI.cpp.o
-
-.PHONY : MyCLI.o
-
-# target to build an object file
-MyCLI.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/MyCLI.cpp.o
-.PHONY : MyCLI.cpp.o
-
-MyCLI.i: MyCLI.cpp.i
-
-.PHONY : MyCLI.i
-
-# target to preprocess a source file
-MyCLI.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/MyCLI.cpp.i
-.PHONY : MyCLI.cpp.i
-
-MyCLI.s: MyCLI.cpp.s
-
-.PHONY : MyCLI.s
-
-# target to generate assembly for a file
-MyCLI.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/MyCLI.cpp.s
-.PHONY : MyCLI.cpp.s
-
-MyLibrary.o: MyLibrary.cpp.o
-
-.PHONY : MyLibrary.o
-
-# target to build an object file
-MyLibrary.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/MyLibrary.cpp.o
-.PHONY : MyLibrary.cpp.o
-
-MyLibrary.i: MyLibrary.cpp.i
-
-.PHONY : MyLibrary.i
-
-# target to preprocess a source file
-MyLibrary.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/MyLibrary.cpp.i
-.PHONY : MyLibrary.cpp.i
-
-MyLibrary.s: MyLibrary.cpp.s
-
-.PHONY : MyLibrary.s
-
-# target to generate assembly for a file
-MyLibrary.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/MyLibrary.cpp.s
-.PHONY : MyLibrary.cpp.s
-
-Point.o: Point.cpp.o
-
-.PHONY : Point.o
-
-# target to build an object file
-Point.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/Point.cpp.o
-.PHONY : Point.cpp.o
-
-Point.i: Point.cpp.i
-
-.PHONY : Point.i
-
-# target to preprocess a source file
-Point.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/Point.cpp.i
-.PHONY : Point.cpp.i
-
-Point.s: Point.cpp.s
-
-.PHONY : Point.s
-
-# target to generate assembly for a file
-Point.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/Point.cpp.s
-.PHONY : Point.cpp.s
-
 Shape/Circle.o: Shape/Circle.cpp.o
 
 .PHONY : Shape/Circle.o
@@ -386,33 +251,6 @@ Shape/Segment.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/Shape/Segment.cpp.s
 .PHONY : Shape/Segment.cpp.s
 
-SvgTemplate.o: SvgTemplate.cpp.o
-
-.PHONY : SvgTemplate.o
-
-# target to build an object file
-SvgTemplate.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/SvgTemplate.cpp.o
-.PHONY : SvgTemplate.cpp.o
-
-SvgTemplate.i: SvgTemplate.cpp.i
-
-.PHONY : SvgTemplate.i
-
-# target to preprocess a source file
-SvgTemplate.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/SvgTemplate.cpp.i
-.PHONY : SvgTemplate.cpp.i
-
-SvgTemplate.s: SvgTemplate.cpp.s
-
-.PHONY : SvgTemplate.s
-
-# target to generate assembly for a file
-SvgTemplate.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/SvgTemplate.cpp.s
-.PHONY : SvgTemplate.cpp.s
-
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -449,21 +287,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... CPlusPlus"
-	@echo "... Color.o"
-	@echo "... Color.i"
-	@echo "... Color.s"
-	@echo "... IShape.o"
-	@echo "... IShape.i"
-	@echo "... IShape.s"
-	@echo "... MyCLI.o"
-	@echo "... MyCLI.i"
-	@echo "... MyCLI.s"
-	@echo "... MyLibrary.o"
-	@echo "... MyLibrary.i"
-	@echo "... MyLibrary.s"
-	@echo "... Point.o"
-	@echo "... Point.i"
-	@echo "... Point.s"
 	@echo "... Shape/Circle.o"
 	@echo "... Shape/Circle.i"
 	@echo "... Shape/Circle.s"
@@ -476,9 +299,6 @@ help:
 	@echo "... Shape/Segment.o"
 	@echo "... Shape/Segment.i"
 	@echo "... Shape/Segment.s"
-	@echo "... SvgTemplate.o"
-	@echo "... SvgTemplate.i"
-	@echo "... SvgTemplate.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -42,7 +42,7 @@ class MyLibrary {
         }
 
         void addDraw(SvgTemplate svg){
-            this->getMyDrawings().push_back(svg);
+            this->myDrawings.push_back(svg);
         }
 
         bool filenameExists(string filename){
@@ -55,20 +55,20 @@ class MyLibrary {
         }
 
         string getShapeTag2(int id){
-            SvgTemplate &svg = this->getMyDrawings().at(id-1);
+            SvgTemplate &svg = this->myDrawings.at(id-1);
             string result = svg.getShapeTagToString();
             return result;
         }
 
         SvgTemplate getSvgTemplate(int id){
-            SvgTemplate &svg = this->getMyDrawings().at(id-1);
+            SvgTemplate &svg = this->myDrawings.at(id-1);
             return svg;
         }
 
         void replaceSvgTemplate(int id, SvgTemplate svg){
-            this->getMyDrawings().at(id-1) = svg;
-            this->getMyDrawings().at(id-1).setSVGTag();
-            this->getMyDrawings().at(id-1).exportToSvgFile(svg);
+            this->myDrawings.at(id-1) = svg;
+            this->myDrawings.at(id-1).setSVGTag();
+            this->myDrawings.at(id-1).exportToSvgFile(svg);
         }
 };
 

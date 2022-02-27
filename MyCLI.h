@@ -85,25 +85,28 @@ private:
     }
 
     void choiceMerge(){
-        int id1 = 0, id2 = 0;
+        if (lib.getMyDrawings().empty()) {
+            cout << "Your library is empty." << endl;
+        } else {
+            int id1 = 0, id2 = 0;
+            cout << "Please, select two drawings you want to merge: " << endl;
+            cout << this->lib.getMyDrawingsName() << endl;
 
-        cout << "Please, select two drawings you want to merge: " << endl;
-        cout << this->lib.getMyDrawingsName() << endl;
+            while(id1 < 1 || id1 > this->lib.getMyDrawings().size()) {
+                cout << "Choice 1 : ";
+                cin >> id1;
+                cout << endl;
+                this->clearAndIgnoreCIN();
+            }
+            while(id2 < 1 || id2 > this->lib.getMyDrawings().size()) {
+                cout << "Choice 2 : ";
+                cin >> id2;
+                cout << endl;
+                this->clearAndIgnoreCIN();
+            }
 
-        while(id1 < 1 || id1 > this->lib.getMyDrawings().size()) {
-            cout << "Choice 1 : ";
-            cin >> id1;
-            cout << endl;
-            this->clearAndIgnoreCIN();
+            this->CLIMergeTwoDraw(id1, id2);
         }
-        while(id2 < 1 || id2 > this->lib.getMyDrawings().size()) {
-            cout << "Choice 2 : ";
-            cin >> id2;
-            cout << endl;
-            this->clearAndIgnoreCIN();
-        }
-
-        this->CLIMergeTwoDraw(id1, id2);
     }
 
     void CLIMergeTwoDraw(int id1, int id2){

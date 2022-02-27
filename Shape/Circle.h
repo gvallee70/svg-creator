@@ -53,7 +53,6 @@ class Circle: public IShape {
             }
 
             while(!checkDimIsNumber(rayon)) {
-                cout << "Please enter a number only." << endl;
                 cout << "Rayon : ";
                 cin >> rayon;
             }

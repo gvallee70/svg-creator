@@ -80,31 +80,16 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/GwendalPadam/Documents/Dev/ESGI/4MOC/Projets/CPlusPlus/Color.cpp">
-			<Option target="CPlusPlus"/>
-		</Unit>
 		<Unit filename="/Users/GwendalPadam/Documents/Dev/ESGI/4MOC/Projets/CPlusPlus/Color.h">
-			<Option target="CPlusPlus"/>
-		</Unit>
-		<Unit filename="/Users/GwendalPadam/Documents/Dev/ESGI/4MOC/Projets/CPlusPlus/IShape.cpp">
 			<Option target="CPlusPlus"/>
 		</Unit>
 		<Unit filename="/Users/GwendalPadam/Documents/Dev/ESGI/4MOC/Projets/CPlusPlus/IShape.h">
 			<Option target="CPlusPlus"/>
 		</Unit>
-		<Unit filename="/Users/GwendalPadam/Documents/Dev/ESGI/4MOC/Projets/CPlusPlus/MyCLI.cpp">
-			<Option target="CPlusPlus"/>
-		</Unit>
 		<Unit filename="/Users/GwendalPadam/Documents/Dev/ESGI/4MOC/Projets/CPlusPlus/MyCLI.h">
 			<Option target="CPlusPlus"/>
 		</Unit>
-		<Unit filename="/Users/GwendalPadam/Documents/Dev/ESGI/4MOC/Projets/CPlusPlus/MyLibrary.cpp">
-			<Option target="CPlusPlus"/>
-		</Unit>
 		<Unit filename="/Users/GwendalPadam/Documents/Dev/ESGI/4MOC/Projets/CPlusPlus/MyLibrary.h">
-			<Option target="CPlusPlus"/>
-		</Unit>
-		<Unit filename="/Users/GwendalPadam/Documents/Dev/ESGI/4MOC/Projets/CPlusPlus/Point.cpp">
 			<Option target="CPlusPlus"/>
 		</Unit>
 		<Unit filename="/Users/GwendalPadam/Documents/Dev/ESGI/4MOC/Projets/CPlusPlus/Point.h">
@@ -132,9 +117,6 @@
 			<Option target="CPlusPlus"/>
 		</Unit>
 		<Unit filename="/Users/GwendalPadam/Documents/Dev/ESGI/4MOC/Projets/CPlusPlus/Shape/Segment.h">
-			<Option target="CPlusPlus"/>
-		</Unit>
-		<Unit filename="/Users/GwendalPadam/Documents/Dev/ESGI/4MOC/Projets/CPlusPlus/SvgTemplate.cpp">
 			<Option target="CPlusPlus"/>
 		</Unit>
 		<Unit filename="/Users/GwendalPadam/Documents/Dev/ESGI/4MOC/Projets/CPlusPlus/SvgTemplate.h">
