@@ -28,7 +28,7 @@ public:
     }
 
     IShape* getShapeToDraw() const{
-        return shapeToDraw;
+        return this->shapeToDraw;
     }
 
     void setShapeToDraw(IShape* shape){
@@ -45,35 +45,39 @@ public:
 
     void createShape() const {
         cout << "You want to draw a " << shapeToDraw->getName() << endl;
-        shapeToDraw->askShapeDim();
+        this->getShapeToDraw()->askShapeDim();
     }
 
-    void addColorShape() const {
-        shapeToDraw->askShapeColor();
+    void addShapeColor() const {
+        this->getShapeToDraw()->askShapeColor();
     }
 
     void createSvgTag(){
         stringstream content;
         vector<string> v;
-        v.push_back(shapeToDraw->getShapeTag());
-        content << svgTemplate.getSvgOpeningTag() << "\n" << shapeToDraw->getShapeTag() << "\n" << svgTemplate.getSvgClosingTag();
+        v.push_back(this->getShapeToDraw()->getShapeTag());
+        content << this->svgTemplate.getSvgOpeningTag() << "\n" << this->getShapeToDraw()->getShapeTag() << "\n" << this->svgTemplate.getSvgClosingTag();
         cout << content.str() << endl;
         svgTemplate.setShapeTag(v);
         svgTemplate.setSVGTag();
     }
 
-    void createSvgFile(SvgTemplate svg){
+    void askNameOfTheDraw() {
         string filename;
-        cout << "Name of draw : ";
+        cout << "Name of the draw: ";
         cin >> filename;
         while(lib.nameFileExist(filename)){
-            cout << "Name draw existing" << endl;
-            cout << "Name of draw : ";
+            cout << "This name already exists. Please enter another one." << endl;
+            cout << "Name of the draw : ";
             cin >> filename;
         }
-        svg.setDrawName(filename);
-        svg.exportToSvgFile();
-        lib.addDraw(svg);
+        this->svgTemplate.setDrawName(filename);
+    }
+
+    void createSvgFile(){
+        askNameOfTheDraw();
+        this->svgTemplate.exportToSvgFile();
+        this->lib.addDraw(this->svgTemplate);
     }
 
     void askShapeToDraw() {
@@ -87,9 +91,9 @@ public:
     void choiceDrawShape(){
         askShapeToDraw();
         createShape();
-        addColorShape();
+        addShapeColor();
         createSvgTag();
-        createSvgFile(this->svgTemplate);
+        createSvgFile();
     }
 
     void choiceMerge(){
@@ -106,24 +110,24 @@ public:
     void CLIMergeTwoDraw(int id1, int id2){
         string shapeTag1 = lib.getShapeTag2(id1);
         string shapeTag2 = lib.getShapeTag2(id2);
-        SvgTemplate newSVG;
-        newSVG.mergeTwoDraw(shapeTag1, shapeTag2);
-        createSvgFile(newSVG);
+        this->svgTemplate.mergeTwoDraw(shapeTag1, shapeTag2);
+        createSvgFile();
     }
 
     void choiceSeeMyLibrary(){
         cout << "------- Content of your library: -------- " << endl;
+        cout << lib.getMyDrawingsName() << endl;
         cout << lib.getMyDrawingsSVGTag() << endl;
     }
 
     void choiceDeleteElement(){
         int id, choiceElementDelete;
-        cout << "Please, select the draw you want to delete element: " << endl;
+        cout << "Please, select the draw on which you want to delete an element: " << endl;
         cout << lib.getMyDrawingsName() << endl;
-        cout << "Choice : ";
+        cout << "Choice: ";
         cin >> id;
         SvgTemplate svg = lib.getSvgTemplate(id);
-        cout << "Selectionner l'element à supprimer" << "\n";
+        cout << "Choose an element to delete: " << "\n";
         cout << svg.getShapeTagToStringWithId();
         cin >> choiceElementDelete;
         //cout << "Avant : " << svg.getShapeTagToString();
@@ -132,11 +136,11 @@ public:
         lib.replaceSvgTemplate(id, svg);
     }
 
-    void choiceQuitProg(){
+    void choiceQuitProgram(){
         cout << "Bye bye" << endl;
     }
 
-    int initProgr(){
+    int initProgram(){
         int initChoice;
         cout << "Hello, please select your choice:" << endl;
         cout << "1/ Draw new shape" << endl;
@@ -148,10 +152,17 @@ public:
         return initChoice;
     }
 
-    void mainProgr(){
+    void mainProgram(){
         int choice = 0;
+
         while(choice != 5) {
-            choice = initProgr();
+            choice = initProgram();
+
+            if (cin.fail()) {
+                cin.clear();
+                cin.ignore();
+            }
+
             switch (choice) {
                 case 1:
                     choiceDrawShape();
@@ -166,7 +177,7 @@ public:
                     choiceDeleteElement();
                     break;
                 case 5:
-                    choiceQuitProg();
+                    choiceQuitProgram();
                     break;
                 default:
                     break;

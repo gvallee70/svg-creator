@@ -3,7 +3,7 @@ using namespace std;
 
 int main() {
     MyCLI cli;
-    cli.mainProgr();
+    cli.mainProgram();
 
     return 0;
 }

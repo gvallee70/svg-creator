@@ -197,6 +197,87 @@ IShape.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/IShape.cpp.s
 .PHONY : IShape.cpp.s
 
+MyCLI.o: MyCLI.cpp.o
+
+.PHONY : MyCLI.o
+
+# target to build an object file
+MyCLI.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/MyCLI.cpp.o
+.PHONY : MyCLI.cpp.o
+
+MyCLI.i: MyCLI.cpp.i
+
+.PHONY : MyCLI.i
+
+# target to preprocess a source file
+MyCLI.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/MyCLI.cpp.i
+.PHONY : MyCLI.cpp.i
+
+MyCLI.s: MyCLI.cpp.s
+
+.PHONY : MyCLI.s
+
+# target to generate assembly for a file
+MyCLI.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/MyCLI.cpp.s
+.PHONY : MyCLI.cpp.s
+
+MyLibrary.o: MyLibrary.cpp.o
+
+.PHONY : MyLibrary.o
+
+# target to build an object file
+MyLibrary.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/MyLibrary.cpp.o
+.PHONY : MyLibrary.cpp.o
+
+MyLibrary.i: MyLibrary.cpp.i
+
+.PHONY : MyLibrary.i
+
+# target to preprocess a source file
+MyLibrary.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/MyLibrary.cpp.i
+.PHONY : MyLibrary.cpp.i
+
+MyLibrary.s: MyLibrary.cpp.s
+
+.PHONY : MyLibrary.s
+
+# target to generate assembly for a file
+MyLibrary.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/MyLibrary.cpp.s
+.PHONY : MyLibrary.cpp.s
+
+Point.o: Point.cpp.o
+
+.PHONY : Point.o
+
+# target to build an object file
+Point.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/Point.cpp.o
+.PHONY : Point.cpp.o
+
+Point.i: Point.cpp.i
+
+.PHONY : Point.i
+
+# target to preprocess a source file
+Point.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/Point.cpp.i
+.PHONY : Point.cpp.i
+
+Point.s: Point.cpp.s
+
+.PHONY : Point.s
+
+# target to generate assembly for a file
+Point.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/Point.cpp.s
+.PHONY : Point.cpp.s
+
 Shape/Circle.o: Shape/Circle.cpp.o
 
 .PHONY : Shape/Circle.o
@@ -223,6 +304,33 @@ Shape/Circle.s: Shape/Circle.cpp.s
 Shape/Circle.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/Shape/Circle.cpp.s
 .PHONY : Shape/Circle.cpp.s
+
+Shape/Polygon.o: Shape/Polygon.cpp.o
+
+.PHONY : Shape/Polygon.o
+
+# target to build an object file
+Shape/Polygon.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/Shape/Polygon.cpp.o
+.PHONY : Shape/Polygon.cpp.o
+
+Shape/Polygon.i: Shape/Polygon.cpp.i
+
+.PHONY : Shape/Polygon.i
+
+# target to preprocess a source file
+Shape/Polygon.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/Shape/Polygon.cpp.i
+.PHONY : Shape/Polygon.cpp.i
+
+Shape/Polygon.s: Shape/Polygon.cpp.s
+
+.PHONY : Shape/Polygon.s
+
+# target to generate assembly for a file
+Shape/Polygon.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlusPlus.dir/build.make CMakeFiles/CPlusPlus.dir/Shape/Polygon.cpp.s
+.PHONY : Shape/Polygon.cpp.s
 
 Shape/Rectangle.o: Shape/Rectangle.cpp.o
 
@@ -347,9 +455,21 @@ help:
 	@echo "... IShape.o"
 	@echo "... IShape.i"
 	@echo "... IShape.s"
+	@echo "... MyCLI.o"
+	@echo "... MyCLI.i"
+	@echo "... MyCLI.s"
+	@echo "... MyLibrary.o"
+	@echo "... MyLibrary.i"
+	@echo "... MyLibrary.s"
+	@echo "... Point.o"
+	@echo "... Point.i"
+	@echo "... Point.s"
 	@echo "... Shape/Circle.o"
 	@echo "... Shape/Circle.i"
 	@echo "... Shape/Circle.s"
+	@echo "... Shape/Polygon.o"
+	@echo "... Shape/Polygon.i"
+	@echo "... Shape/Polygon.s"
 	@echo "... Shape/Rectangle.o"
 	@echo "... Shape/Rectangle.i"
 	@echo "... Shape/Rectangle.s"

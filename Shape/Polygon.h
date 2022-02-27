@@ -33,7 +33,7 @@ class Polygon: public IShape {
 
         string getShapeTag() override{
                 stringstream shapeTag;
-                shapeTag << "<" << this->tagName << " points=\"" << this->getPoints() << "\" stroke=\"" << this->getShapeColor()->getColorTag() << "\"""/>";
+                shapeTag << "<" << this->tagName << " points=\"" << this->getPoints() << "\" fill=\"" << this->getShapeColor()->getColorTag() << "\"""/>";
                 return shapeTag.str();
         }
 

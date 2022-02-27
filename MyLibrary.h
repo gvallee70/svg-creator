@@ -21,7 +21,8 @@ class MyLibrary {
         string getMyDrawingsSVGTag(){
             stringstream content;
             for (SvgTemplate drawing: myDrawings){
-                content << drawing.getSVGTag() << "\n";
+                content << "-> " << drawing.getDrawName() << "\n";
+                content << drawing.getSVGTag() << "\n\n";
             }
             return content.str();
         }
