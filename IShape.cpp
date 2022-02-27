@@ -15,7 +15,7 @@ string IShape::getTagName() {
     return this->tagName;
 }
 
-string IShape::getShapeTag(){
+string IShape::getShapesTag(){
     return this->shapeTag;
 }
 */

@@ -14,9 +14,13 @@
 using namespace std;
 
 class MyLibrary {
+    private:
+        vector<SvgTemplate> myDrawings;
 
     public:
-        vector<SvgTemplate> myDrawings;
+        vector <SvgTemplate> getMyDrawings() {
+            return this->myDrawings;
+        }
 
         string getMyDrawingsSVGTag(){
             stringstream content;
@@ -64,7 +68,7 @@ class MyLibrary {
         void replaceSvgTemplate(int id, SvgTemplate svg){
             myDrawings.at(id-1) = svg;
             myDrawings.at(id-1).setSVGTag();
-            myDrawings.at(id-1).exportToSvgFile();
+            myDrawings.at(id-1).exportToSvgFile(svg);
         }
 };
 

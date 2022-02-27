@@ -39,14 +39,30 @@ class Circle: public IShape {
         }
 
         void askShapeDim() override {
-            int cx, cy, rayon;
+            char cx;
+            char cy;
+            char rayon;
 
-            cout << "Cx : ";
-            cin >> cx;
-            cout << "Cy : ";
-            cin >> cy;
-            cout << "Rayon : ";
-            cin >> rayon;
+            while(!isdigit(cx)) {
+                cout << "Cx : ";
+                cin >> cx;
+            }
+
+            while(!isdigit(cy)) {
+                cout << "Cy : ";
+                cin >> cy;
+            }
+
+            while(!isdigit(rayon)) {
+                cout << "Please enter a number only." << endl;
+                cout << "Rayon : ";
+                cin >> rayon;
+            }
+
+            if (cin.fail()) {
+                cin.clear();
+                cin.ignore();
+            }
 
             this->setCx(cx);
             this->setCy(cy);

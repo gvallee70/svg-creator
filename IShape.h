@@ -31,15 +31,23 @@ class IShape {
         void askShapeColor() {
             cout << "What color?" << endl;
 
-            int i = 1;
-            int colorChoice;
+            int colorChoice = 0;
             vector<Color*> colors = Color::getColors();
 
-            for(Color *color : colors) {
-                cout << i << ". " << color->getColorName() << endl;
-                i++;
+            while(colorChoice < 1 || colorChoice > colors.size()) {
+                cout << "Please, select an existing color: " << endl;
+                int i = 1;
+                for(Color *color : colors) {
+                    cout << i << ". " << color->getColorName() << endl;
+                    i++;
+                }
+                cin >> colorChoice;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore();
+                }
             }
-            cin >> colorChoice;
 
             this->setShapeColor(colors[colorChoice - 1]);
         }

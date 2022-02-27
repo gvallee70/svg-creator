@@ -25,7 +25,7 @@ class Color {
         string getColorName() const { return this->name; }
         string getColorTag() const { return this->tag; }
         static vector<Color *> getColors() {
-            return std::vector<Color *>{
+            return vector<Color *>{
                     new Color("Red", "red"),
                     new Color("Blue", "blue"),
                     new Color("Black", "black"),

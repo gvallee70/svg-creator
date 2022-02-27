@@ -22,7 +22,7 @@ using namespace std;
         int getWidth();
         int getHeight();
 
-        string getShapeTag();
+        string getShapesTag();
 
         void askShapeDim(){
             int width, height;

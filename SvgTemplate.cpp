@@ -38,14 +38,14 @@ void SvgTemplate::setShapeTag(vector<string> tag){
     this->shapeTag = tag;
 }
 
-vector<string> SvgTemplate::getShapeTag(){
+vector<string> SvgTemplate::getShapesTag(){
     return this->shapeTag;
 }
 
-void SvgTemplate::exportToSvgFile() {
-    std::ofstream outfile (this->getDrawName() + ".svg");
+void SvgTemplate::exportToSvgFile(SvgTemplate svg) {
+    std::ofstream outfile (svg.getDrawName() + ".svg");
 
-    outfile << svgTag << std::endl;
+    outfile << svg.getSVGTag() << std::endl;
     outfile.close();
 }
 
@@ -67,7 +67,6 @@ string SvgTemplate::getShapeTagToString(){
 }
 
 string SvgTemplate::getShapeTagToStringWithId(){
-    cout << "Vous voulez supprimer quel element ?" << "\n";
     stringstream content;
     int i = 1;
     for(string st: shapeTag){

@@ -24,11 +24,11 @@ class SvgTemplate {
         string getSvgClosingTag();
 
         void setShapeTag(vector<string> tag);
-        vector<string> getShapeTag();
+        vector<string> getShapesTag();
         string getShapeTagToString();
         string getShapeTagToStringWithId();
 
-        void exportToSvgFile();
+        void exportToSvgFile(SvgTemplate svg);
 
         void mergeTwoDraw(string name1, string name2);
 
