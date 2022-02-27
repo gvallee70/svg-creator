@@ -56,16 +56,22 @@ public:
         stringstream content;
         content << svgTemplate.getSvgOpeningTag() << "\n" << shapeToDraw->getShapeTag() << "\n" << svgTemplate.getSvgClosingTag();
         cout << content.str() << endl;
+        svgTemplate.setShapeTag(shapeToDraw->getShapeTag());
         svgTemplate.setSVGTag(content.str());
     }
 
-    void createSvgFile(){
+    void createSvgFile(SvgTemplate svg){
         string filename;
         cout << "Name of draw : ";
         cin >> filename;
-        svgTemplate.setDrawName(filename);
-        svgTemplate.exportToSvgFile();
-        lib.addDraw(svgTemplate);
+        while(lib.nameFileExist(filename)){
+            cout << "Name draw existing" << endl;
+            cout << "Name of draw : ";
+            cin >> filename;
+        }
+        svg.setDrawName(filename);
+        svg.exportToSvgFile();
+        lib.addDraw(svg);
     }
 
     void askShapeToDraw() {
@@ -81,17 +87,36 @@ public:
         createShape();
         addColorShape();
         createSvgTag();
-        createSvgFile();
+        createSvgFile(this->svgTemplate);
     }
 
     void choiceMerge(){
+        int id1, id2;
         cout << "Please, select two drawings you want to merge: " << endl;
         cout << lib.getMyDrawingsName() << endl;
+        cout << "Choice 1 : ";
+        cin >> id1;
+        cout << "Choice 2 : ";
+        cin >> id2;
+        CLIMergeTwoDraw(id1, id2);
+    }
+
+    void CLIMergeTwoDraw(int id1, int id2){
+        string shapeTag1 = lib.getShapeTag2(id1);
+        string shapeTag2 = lib.getShapeTag2(id2);
+        SvgTemplate newSVG;
+        newSVG.mergeTwoDraw(shapeTag1, shapeTag2);
+        createSvgFile(newSVG);
     }
 
     void choiceSeeMyLibrary(){
         cout << "------- Content of your library: -------- " << endl;
         cout << lib.getMyDrawingsSVGTag() << endl;
+    }
+
+    void choiceDeleteElement(){
+        cout << "Please, select the draw you want to delete element: " << endl;
+        cout << lib.getMyDrawingsName() << endl;
     }
 
     void choiceQuitProg(){
@@ -104,16 +129,16 @@ public:
         cout << "1/ Draw new shape" << endl;
         cout << "2/ Merge two drawings" << endl;
         cout << "3/ Consult your library" << endl;
-        cout << "4/ Quit " << endl;
+        cout << "4/ Delete element" << endl;
+        cout << "5/ Quit " << endl;
         cin >> initChoice;
         return initChoice;
     }
 
     void mainProgr(){
         int choice = 0;
-        while(choice != 4) {
+        while(choice != 5) {
             choice = initProgr();
-
             switch (choice) {
                 case 1:
                     choiceDrawShape();
@@ -125,6 +150,9 @@ public:
                     choiceSeeMyLibrary();
                     break;
                 case 4:
+                    choiceDeleteElement();
+                    break;
+                case 5:
                     choiceQuitProg();
                     break;
                 default:

@@ -50,9 +50,12 @@ void SvgTemplate::exportToSvgFile() {
 
 void SvgTemplate::mergeTwoDraw(string shapeTag1, string shapeTag2){
     stringstream str;
+    stringstream shapeTag;
+    shapeTag << shapeTag1 << "\n";
+    shapeTag << shapeTag2 << "\n";
+    this->setShapeTag(shapeTag.str());
     str << this->getSvgOpeningTag() << "\n";
-    str << shapeTag1 << "\n";
-    str << shapeTag2 << "\n";
+    str << this->getShapeTag() << "\n";
     str << this->getSvgClosingTag();
     this->setSVGTag(str.str());
 }
