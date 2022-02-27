@@ -10,37 +10,6 @@
 #include "sstream"
 using namespace std;
 
-/*class Rectangle : public IShape {
-    public:
-        int width;
-        int height;
-
-        Rectangle();
-
-        void setWidth(int width);
-        void setHeight(int height);
-        int getWidth();
-        int getHeight();
-
-        string getShapesTag();
-
-        void askShapeDim(){
-            int width, height;
-
-            cout << "Height : ";
-            cin >> height;
-            cout << "Width : ";
-            cin >> width;
-
-            this->setWidth(width);
-            this->setHeight(height);
-        }
-
-};
-
-#endif //CPLUSPLUS_RECTANGLE_H
-*/
-
 class Rectangle : public IShape {
     private:
         int width;
@@ -67,15 +36,20 @@ class Rectangle : public IShape {
         }
 
         void askShapeDim() override {
-            int width, height;
-            cout << "Height : ";
-            cin >> height;
-            cout << "Width : ";
-            cin >> width;
+            string width, height;
 
-            this->setWidth(width);
-            this->setHeight(height);
+            while(!checkDimIsNumber(height)) {
+                cout << "Height : ";
+                cin >> height;
+            }
 
+            while(!checkDimIsNumber(width)) {
+                cout << "Width : ";
+                cin >> width;
+            }
+
+            this->setWidth(stoi(width));
+            this->setHeight(stoi(height));
         }
 };
 

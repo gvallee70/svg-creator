@@ -40,16 +40,23 @@ class Polygon: public IShape {
         void askShapeDim() override {
             int numPoint=1;
             string myChoice;
-            int x,y;
+            string x,y;
 
             //minimum 3 points pour un polygon
             while(numPoint<=3 || myChoice != "n"){
+                x = "";
+                y = "";
                 cout << "--- Point " << numPoint << " ---" << endl;
-                cout << "x: ";
-                cin >> x;
-                cout << "y:";
-                cin >> y;
-                this->points.push_back(*new Point(x,y));
+                while(!checkDimIsNumber(x)) {
+                    cout << "x: ";
+                    cin >> x;
+                }
+
+                while(!checkDimIsNumber(y)) {
+                    cout << "y: ";
+                    cin >> y;
+                }
+                this->points.push_back(*new Point(stoi(x),stoi(y)));
 
                 if(numPoint>=3) {
                     cout << "Continue (y/n) ? " << endl;
@@ -59,8 +66,6 @@ class Polygon: public IShape {
 
             }
         }
-
 };
-
 
 #endif //CPLUSPLUS_POLYGON_H

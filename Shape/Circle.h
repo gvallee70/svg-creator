@@ -28,7 +28,6 @@ class Circle: public IShape {
         int getCx() const { return this->cx; }
         int getCy() const { return this->cy; }
 
-
         //IShape methods
         string getName() override { return this->name; }
 
@@ -39,21 +38,21 @@ class Circle: public IShape {
         }
 
         void askShapeDim() override {
-            char cx;
-            char cy;
-            char rayon;
+            string cx;
+            string cy;
+            string rayon;
 
-            while(!isdigit(cx)) {
+            while(!checkDimIsNumber(cx)) {
                 cout << "Cx : ";
                 cin >> cx;
             }
 
-            while(!isdigit(cy)) {
+            while(!checkDimIsNumber(cy)) {
                 cout << "Cy : ";
                 cin >> cy;
             }
 
-            while(!isdigit(rayon)) {
+            while(!checkDimIsNumber(rayon)) {
                 cout << "Please enter a number only." << endl;
                 cout << "Rayon : ";
                 cin >> rayon;
@@ -64,9 +63,9 @@ class Circle: public IShape {
                 cin.ignore();
             }
 
-            this->setCx(cx);
-            this->setCy(cy);
-            this->setRayon(rayon);
+            this->setCx(stoi(cx));
+            this->setCy(stoi(cy));
+            this->setRayon(stoi(rayon));
 
         }
 };

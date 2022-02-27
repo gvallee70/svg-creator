@@ -16,15 +16,12 @@ class Segment: public IShape{
         Point p1;
         Point p2;
 
-
     public:
         Segment(){
             this->name = "Segment";
             this->tagName = "line";
         }
 
-
-        
         //IShape methods
         string getName() override { return this->name; }
 
@@ -35,26 +32,34 @@ class Segment: public IShape{
         }
 
         void askShapeDim() override {
-            int x1, x2, y1, y2;
+            string x1, x2, y1, y2;
 
             cout << "--- Point 1 --- " << endl;
-            cout << "x: ";
-            cin >> x1;
-            cout << "y:";
-            cin >> y1;
-            p1.setPoint(x1,y1);
+            while(!checkDimIsNumber(x1)) {
+                cout << "x: ";
+                cin >> x1;
+            }
 
+            while(!checkDimIsNumber(y1)) {
+                cout << "y: ";
+                cin >> y1;
+            }
+            p1.setPoint(stoi(x1),stoi(y1));
 
             cout << "--- Point 2 --- " << endl;
-            cout << "x:";
-            cin >> x2;
-            cout << "y:";
-            cin >> y2;
-            p2.setPoint(x2,y2);
+            while(!checkDimIsNumber(x2)) {
+                cout << "x: ";
+                cin >> x2;
+            }
+
+            while(!checkDimIsNumber(y2)) {
+                cout << "y: ";
+                cin >> y2;
+            }
+
+            p2.setPoint(stoi(x2),stoi(y2));
 
         }
-
 };
-
 
 #endif //CPLUSPLUS_SEGMENT_H
